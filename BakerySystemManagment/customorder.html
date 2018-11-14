@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="body.css"/>
+<script type="text/javascript"></script>
+</head>
+<body>
+<div class="topnav">
+  <a href="NewFile.html">Home</a>
+  <a href="special.html">#Special</a>
+  <a href="customorder.html">@Custom-Order</a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+  <a id="buyn" style="background-color: #ffffff;"  href="contact.html" style><img alt="location" style="height=:10px; width:10px;   background-size: cover;" src="location.png"></a>
+</div>
+<div id="spl">
+<div id="custdesc">
+<h2 style="color:#ffbb99;">Description</h2><br>
+<pre>*nfkesjfnefjne
+*klmfksfmjnfej
+*jdjhjdjekmdke</pre>
+</div>
+<form action="" method="POST">
+<input class="txt" type="text"  placeholder="Name" name="name" size="40"/><br/><br/>
+<input class="txt" type="text"  placeholder="Email" name="email" size="40"/><br/><br/>
+<input class="txt" type="text"  placeholder="Mobile Number" name="num" size="40"/><br/><br/>
+<input class="txt" type="text"  placeholder="Describe the Quantity" name="qnt" size="40"/><br/><br/>
+<input class="txt" type="text"  placeholder="NAME ON CAKE" name="nameoncake" size="40"/><br/><br/>
+<textarea rows="8" cols="45" style="background-color:#c7c7c7;" placeholder="Description" name="desc"></textarea><br/><br/>
+
+
+
+</div>
+<div id="fileUpload">
+<br><br>
+
+<h2 style="color:red;">Upload a reference picture.</h2>
+<input type="file" name="fileupload" value="fileupload" onchange="previewFile()" id="fileupload" accept="image/gif, image/jpeg, image/png"><br><br><br/>
+<img id="blah" src="" height="200" width="250" alt="please Upload/Change image" />
+
+<script>
+   function previewFile(){
+       var preview = document.querySelector('img#blah'); //selects the query named img
+       var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+       var reader  = new FileReader();
+
+       reader.onloadend = function () {
+           preview.src = reader.result;
+       }
+
+       if (file) {
+           reader.readAsDataURL(file); //reads the data as a URL
+       } else {
+           preview.src = "";
+       }
+  }
+
+  previewFile();  //calls the function named previewFile()
+  </script>
+
+
+
+<div id="button">
+<input class="txt" type="submit" value="SUBMIT"/>
+<input class="txt" type="reset" value="RESET"/></div>
+
+</form>
+</div>
+
+
+</body>
+</html>

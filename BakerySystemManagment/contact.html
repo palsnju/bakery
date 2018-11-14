@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="body.css"/>
+<link rel="stylesheet" type="text/css" href="adopt.css"/>
+</head>
+<body>
+<div class="topnav">
+  <a href="NewFile.html">Home</a>
+  <a href="special.html">#Special</a>
+  <a href="customorder.html">@Custom-Order</a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+  <a id="buyn" style="background-color: #ffffff;"  href="contact.html" style><img alt="location" style="height=:10px; width:10px;" src="location.png"></a>
+</div>
+<div id="feedback">
+<form action="" method="POST">
+<input class="txt" type="text"  placeholder="Name" name="name" size="40"/><br/><br/>
+<input class="txt" type="text"  placeholder="Email" name="email" size="40"/><br/><br/>
+<input class="txt" type="text"  placeholder="Mobile Number" name="num" size="40"/><br/><br/>
+<fieldset class="rating">
+    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+</fieldset><br><br>
+<textarea rows="8" cols="45" style="background-color:#c7c7c7;" placeholder="Description" name="desc"></textarea><br/><br/>
+
+<input class="txt" type="submit" value="SUBMIT"/>
+<input class="txt" type="reset" value="RESET"/>
+</form>
+
+</div>
+<a href="https://www.google.com/maps/place/Raja+Bakery+Sweet+Shop/@31.5878525,75.2920572,17z/data=!3m1!4b1!4m5!3m4!1s0x391bcb5e6632607f:0x849ac7eb2d960d3f!8m2!3d31.5878479!4d75.2942459" target="_blank" lable="Click to get exact location on map"><div id="googleMap" ></div></a>
+
+<div id="mydiv" style="top:490px; left:450px; width:350px; height:150px;">
+
+<div id="mydivheader"><h3 id="add">Address : Chowk Passion Amritsar, Punjab (143001)</h3></div>
+<div id="mydivheader"><h2 id="add">Mobile : 0183 229 3884</h2></div>
+</div>
+<script>
+
+//Make the DIV element draggagle:
+dragElement(document.getElementById("mydiv"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+
+
+
+</body>
+</html>

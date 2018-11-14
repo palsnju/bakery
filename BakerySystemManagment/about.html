@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="body.css"/>
+<link rel="stylesheet" type="text/css" href="adopt.css"/>
+</head>
+<body>
+<div class="topnav">
+  <a href="NewFile.html">Home</a>
+  <a href="special.html">#Special</a>
+  <a href="customorder.html">@Custom-Order</a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+  <a id="buyn" style="background-color: #ffffff;"  href="contact.html" style><img alt="location" style="height:10px; width:10px;" src="location.png"></a>
+</div>
+                                     <!-- Description div -->
+
+<div style="position:relative;top:100px; left:10px; width:600px; height:500px; background-color:black;  border-radius: 15px;">
+
+<div id="mydivheader"><h3 style="text-align:center; color:red;">About Us</h3></div><br/>
+
+<div id="mydivheader">
+<h4 id="add">*hdjhdbjh sdds sdfsed asdfs asdfsdf skmlkemkjnewkfjenekjnjknjnkej neekjwhbnekjenjenkenke hehweb</h4>
+
+
+
+</div>
+</div>
+
+
+<div  style="position:absolute;top:100px; left:870px; width:250px; height:50px; border-radius: 15px;  background-color:red;"><h1 style="color:black; text-align:center;">-: Photo Gallery :-</h1></div>
+
+
+<div class="item" style="position:absolute; left:680px; top:180px;
+ background-image: url(x1.jpg); background-size: cover; background-repeat: no-repeat;">
+</div>
+<!--increase left by 320 -->
+<div class="item" style="position:absolute; left:1000px; top:180px;
+ background-image: url(x2.jpg); background-size: cover; background-repeat: no-repeat;">
+</div>
+
+
+<!-- incread top  320  -->
+<div class="item" style="position:absolute; left:680px; top:500px;
+ background-image: url(x3.jpg); background-size: cover; background-repeat: no-repeat;">
+</div>
+
+<div class="item" style="position:absolute; left:1000px; top:500px;
+ background-image: url(x4.jpg); background-size: cover; background-repeat: no-repeat;">
+</div>
+
+<div class="item" style="position:absolute; left:40px; top:820px;
+ background-image: url(x5.jpg); background-size: cover; background-repeat: no-repeat;">
+</div>
+
+<div class="item" style="position:absolute; left:360px; top:820px;
+ background-image: url(x6.jpg); background-size: cover; background-repeat: no-repeat;">
+</div>
+
+<div class="item" style="position:absolute; left:680px; top:820px;
+ background-image: url(x7.jpg); background-size: cover; background-repeat: no-repeat;">
+</div>
+
+<div class="item" style="position:absolute; left:1000px; top:820px;
+ background-image: url(x8.jpg); background-size: cover; background-repeat: no-repeat;">
+</div>
+
+<div class="item" style="position:absolute; left:40px; top:1140px;
+ background-image: url(x9.jpg); background-size: cover; background-repeat: no-repeat;">
+</div>
+
+<div class="item" style="position:absolute; left:360px; top:1140px;
+ background-image: url(x10.jpg); background-size: cover; background-repeat: no-repeat;">
+</div>
+
+<div class="item" style="position:absolute; left:680px; top:1140px;
+ background-image: url(x11.jpg); background-size: cover; background-repeat: no-repeat;">
+</div>
+
+<div class="item" style="position:absolute; left:1000px; top:1140px;
+ background-image: url(x12.jpg); background-size: cover; background-repeat: no-repeat;">
+</div>
+
+<div id="mydiv" style=" position:relative; top:120px; left:10px; width:600px; height:155px; background-color:#010232;">
+
+<div id="mydivheader"><h3 id="add">Address : Chowk Passion Amritsar, Punjab (143001)</h3></div>
+<div id="mydivheader"><h2 id="add">Mobile : 0183 229 3884</h2></div>
+</div>
+<script>
+
+//Make the DIV element draggagle:
+dragElement(document.getElementById("mydiv"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+
+
+
+        
+        
+
+
+</body>
+</html>
